@@ -1758,7 +1758,6 @@ html[dir="ltr"] .bt_input {
   justify-content: center;
 }
 .newsletter {
-  background-attachment: fixed;
   padding: 30px 0 30px;
   background-size: 100% 100%;
 }
