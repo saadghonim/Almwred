@@ -1703,9 +1703,6 @@ footer .f_list .nest_list {
   html[dir="ltr"] footer .f_list .nest_list {
     text-align: left;
   }
-  footer{
-    padding: 0;
-  }
 
   .footer_social .logo {
     margin-bottom: 30px;
