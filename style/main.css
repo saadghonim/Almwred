@@ -1204,6 +1204,9 @@ html[dir="ltr"] .best_seller .owl-next {
   .anc_banners{
     margin-bottom: 15px;
   }
+  .banners_div {
+    text-align: center;
+  }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~end banners~~~~~~~~~~~~~~~~~~~~~~
