@@ -5,18 +5,18 @@ $(document).ready(function(){
 ~~~~~~~~~~~~~~~~~~~start  header~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */
 
-      $(".navbar_bt_bar").click(function() {
+    $(".navbar_bt_bar").click(function() {
         $(".navbar_").toggle(500);
         $(".moboverlay").fadeIn('500');
         $(".bars_icon").addClass("close_");
+				$("body").addClass("over");
     });
 
     $(".moboverlay").click(function() {
         $(".navbar_").toggle(500);
         $(".moboverlay").fadeOut('500');
         $(".bars_icon").removeClass("close_");
-
-
+				$("body").removeClass("over");
 
     });
     $(".anc_hover").click(function() {

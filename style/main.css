@@ -198,7 +198,12 @@ html[dir="rtl"] .bt_user {
 html[dir="ltr"] .bt_user {
   margin-left: 30px;
 }
-
+html[dir="ltr"] .bt_user:nth-child(4){
+  margin-right: 30px;
+}
+html[dir="rtl"] .bt_user:nth-child(4){
+  margin-left: 30px;
+}
 .bt_user:hover {
   color: rgb(254, 124, 0);
 }
@@ -233,18 +238,11 @@ html[dir="ltr"] .bt_user {
   color: #fe7c00;
 }
 html[dir="rtl"] .close_n {
-  right: 20px;
+  left: 20px;
 }
 
 html[dir="ltr"] .close_n {
   right: 20px;
-}
-html[dir="rtl"] .bt_user:last-of-type {
-    margin-left: 30px;
-}
-
-html[dir="ltr"] .bt_user:last-of-type {
-    margin-right: 30px;
 }
 
 .lang {
@@ -339,10 +337,16 @@ html[dir="ltr"] .dropdown-content-rl {
         left: -69px;
     }
     .user {
-        display: block;
+        display: flex;
     }
     .dropdown-content-rl {
       top: 0;
+    }
+    html[dir="ltr"] .bt_user:nth-child(4){
+      margin-right: 0px;
+    }
+    html[dir="rtl"] .bt_user:nth-child(4){
+      margin-left: 0px;
     }
 }
 
@@ -450,6 +454,12 @@ html[dir="ltr"] .dropdown-content-lang {
   -ms-border-radius: unset;
   -o-border-radius: unset;
 }
+.modal{
+  position: absolute;
+}
+.modal-dialog{
+  margin: 171px auto 0 auto;
+}
 button.close{
   position: absolute;
   top: -52px;
@@ -462,7 +472,7 @@ button.close{
   padding: 0;
 }
 .modal-body input::placeholder{
-  color:rgb(255, 255, 255)
+  color:rgb(218, 213, 213)
 }
 .modal-body .input-search{
   position: relative;
@@ -474,7 +484,7 @@ button.close{
   height: 50px;
   padding: 0 20px ;
   background-color: rgb(255, 255, 255);
-  color:#ffffff;
+  color:#b8b4b4;
   font-size: 18px;
 }
 .modal-body input:focus{
@@ -488,6 +498,13 @@ button.close{
   top: 16px;
   color:#000000;
   font-size: 17px;
+}
+.modal-backdrop.in {
+  opacity: .8;
+}
+
+.close:focus, .close:hover{
+  color:#fe7c00;
 }
 html[dir="ltr"] .modal-body .ico_{right: 20px;}
 html[dir="rtl"] .modal-body .ico_{left: 20px;}
@@ -513,11 +530,18 @@ html[dir="rtl"] .modal-body .ico_{left: 20px;}
   border-bottom: 8px solid #fff;
   position: absolute;
   top: -8px;
-  left: 39%;
+  
   transform: translateX(-50%);
   transition: 0.3s;
   opacity: 1;
 }
+html[dir="rtl"] .ul_menu::after {
+  right: 37%;
+}
+
+html[dir="ltr"] .ul_menu::after  {
+  left: 39%;
+} 
 
 html[dir="rtl"] .ul_menu {
   left: 50%;
@@ -581,6 +605,7 @@ html[dir="ltr"] .ul_menu li {
 @media(min-width:1200px) {
     .navbar_bt_bar {
         display: none;
+
     }
 }
 
@@ -596,22 +621,23 @@ html[dir="ltr"] .ul_menu li {
         position: absolute;
         top: 0%;
         left: 0;
-        width: 85%;
+        width: 100%;
         height: 100vh;
         z-index: 99;
         background: #fff;
         display: flex;
         justify-content: center;
         display: none;
+        overflow-y: auto;
     }
     .close_n{
       display: block;
     }
     html[dir="rtl"] .navbar_ {
-        left: 0;
+        right: 0;
     }
     html[dir="ltr"] .navbar_ {
-        right: 0;
+        left: 0;
     }
     .nav_ul {
         flex-direction: column;
@@ -708,27 +734,31 @@ html[dir="ltr"] .ul_menu li {
     .header {
         margin: 10px 0;
     }
-    .bt_user {
-        height: 0;
-        width: 0;
-    }
     .bt_user:hover {
         color: rgb(33, 33, 33);
     }
     html[dir="rtl"] .bt_user {
-        margin-right: 35px;
+        margin-right: 20px;
     }
     html[dir="ltr"] .bt_user {
-        margin-left: 35px;
+        margin-left: 20px;
     }
+
     html[dir="rtl"] .lang {
         margin-right: 15px;
     }
     html[dir="rtl"] .lang {
         margin-left: 15px;
     }
+    html[dir="rtl"] .ul_menu li {
+      margin:0px;
+    }
+    
+    html[dir="ltr"] .ul_menu li {
+      margin: 0px;
+    }
     .logo img {
-        width: 112px
+        width: 140px
     }
     .lang {
         display: none;
@@ -918,7 +948,6 @@ html[dir="ltr"] .ul_menu li {
   -moz-transition: .5s;
   -ms-transition: .5s;
   -o-transition: .5s;
-  border-radius: 6px;
 }
 .anc_new:hover .bt_new{
   visibility: visible;
@@ -939,7 +968,8 @@ html[dir="ltr"] .ul_menu li {
   -o-transform: scale(1.1);
 }
 .anc_new_name{
-  font-size: 19px;
+  font-size: 16px;
+  font-weight: 400;
   font-family: "Tajawal";
   color: rgb(0, 0, 0);
   font-weight: 500;
@@ -978,7 +1008,7 @@ html[dir="ltr"] .div_item .price span{
   margin-left: 5px;
 }
 .div_item .price p{
-  font-size: 21px;
+  font-size: 18px;
   font-family: "Tajawal";
   font-weight: 700;
   color: rgb(231, 43, 55);
@@ -1064,11 +1094,20 @@ html[dir="ltr"] .best_seller .owl-next {
   .anc_new_name{
     font-size: 17px;
   }
+  .div_item .price{
+    flex-direction: column;
+  }
+  html[dir="rtl"] .div_item .price span{
+    margin-right: 0px;
+  }
+  html[dir="ltr"] .div_item .price span{
+    margin-left: 0px;
+  }
   .div_item .price p{
     font-size: 17px;
   }
   .div_item .price span{
-    font-size: 17px;
+    font-size: 18px;
   }
   .title_logo span{
     font-size: 26px;
@@ -1500,10 +1539,21 @@ html[dir="ltr"] .fa-envelope {
         font-size: 22px;
     }
     .newsletter span{
-      font-size: 35px;
+      font-size: 27px;
+      line-height: 2.2;
+
     }
     .newsletter p{
-      font-size: 15px;
+      font-size: 14px;
+    }
+    .newsletter{
+      background-image: none;
+    }
+    .newsletter_p{
+    background-image: url(../images/newsletter.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1591,7 +1641,7 @@ footer .down_f:hover{
 .nest_list li a{
   font-size: 15px;
   font-family: "Tajawal";
-  font-weight: 500;
+  font-weight: 400;
   color: #424242;
   line-height: 30px;
   text-transform: capitalize;
@@ -1730,6 +1780,7 @@ margin: auto;
 }
 .input_div{
   width: 100%;
+  height: 42px;
 }
 .input_div input{
   width: 100%;
@@ -1841,7 +1892,7 @@ html[dir="ltr"] .copy_p img, .copy_p span {
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
-  top:60%;
+  top:50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -2201,3 +2252,16 @@ html[dir="ltr"] .copy_p img, .copy_p span {
   animation-delay: 0.3s;
 }
 
+@media(max-width:767px){
+  .loader {
+    width: 100px;
+  }
+  .roller:before, .roller:last-child:before{
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.over {
+  overflow-y: hidden;
+}
