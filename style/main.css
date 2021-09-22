@@ -187,9 +187,11 @@ html[dir="ltr"] .nav_ul .anc_nav {
 
 .bt_user {
     font-size: 16px;
-
     color: rgb(33, 33, 33);
     transition: .5s;
+}
+.bt_user:focus{
+  outline: 0;
 }
 html[dir="rtl"] .bt_user {
   margin-right: 30px;
@@ -331,16 +333,16 @@ html[dir="ltr"] .dropdown-content-rl {
 
 @media(max-width:767px) {
     html[dir="rtl"] .dropdown-content-rl {
-        right: -69px;
+        right: -100px;
     }
     html[dir="ltr"] .dropdown-content-rl {
-        left: -69px;
+        left: -103px;
     }
     .user {
         display: flex;
     }
     .dropdown-content-rl {
-      top: 0;
+      top: 13px;
     }
     html[dir="ltr"] .bt_user:nth-child(4){
       margin-right: 0px;
