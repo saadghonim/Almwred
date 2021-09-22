@@ -9,7 +9,6 @@ $(document).ready(function(){
         $(".navbar_").toggle(500);
         $(".moboverlay").fadeIn('500');
         $(".bars_icon").addClass("close_");
-				$("body").addClass("over");
     });
 
     $(".moboverlay").click(function() {
@@ -27,6 +26,8 @@ $(document).ready(function(){
     })
     $(".close_n").click(function(){
       $(".moboverlay").trigger("click");
+			$(".bars_icon").removeClass("close_");
+			$(".navbar_").toggle(500);
     
     });
 
