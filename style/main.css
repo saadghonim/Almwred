@@ -616,7 +616,11 @@ html[dir="ltr"] .ul_menu li {
     width: 59%;
   }
 }
-
+@media(max-width:1400px){
+  .modal-dialog{
+    width:93%
+  }
+}
 @media(min-width:1200px) {
     .navbar_bt_bar {
         display: none;
